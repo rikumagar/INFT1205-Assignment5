@@ -2,23 +2,25 @@
   Name: Hrigdev Thapa
   File: main.js
   Date: 2025-12-08
-  Description: JavaScript functionality for toggling comments and submitting new comments.
+  Description: Handles comment toggling and form submission with keyboard accessibility.
 */
 
-// SHOW/HIDE COMMENTS (keyboard accessible)
+// =====================================================
+// SHOW / HIDE COMMENTS — Keyboard Accessible
+// =====================================================
 
 const showHideBtn = document.querySelector('.show-hide');
 const commentWrapper = document.querySelector('.comment-wrapper');
 
+// Hide comments at start
 commentWrapper.style.display = 'none';
 
+// Click toggles comments
 showHideBtn.addEventListener('click', toggleComments);
 
-// Enable Enter key
-showHideBtn.addEventListener('keypress', function(e) {
-  if (e.key === "Enter") {
-    toggleComments();
-  }
+// Enter key toggles comments (keyboard accessibility)
+showHideBtn.addEventListener('keypress', function (e) {
+  if (e.key === "Enter") toggleComments();
 });
 
 function toggleComments() {
@@ -31,30 +33,34 @@ function toggleComments() {
   }
 }
 
-// COMMENT FORM HANDLING
+// =====================================================
+// ADD NEW COMMENT TO LIST
+// =====================================================
 
 const form = document.querySelector('.comment-form');
 const nameField = document.querySelector('#name');
 const commentField = document.querySelector('#comment');
 const list = document.querySelector('.comment-container');
 
-form.addEventListener('submit', function(e) {
+// Prevent reload and process form
+form.addEventListener('submit', function (e) {
   e.preventDefault();
   submitComment();
 });
 
 function submitComment() {
-  const listItem = document.createElement('li');
-  const namePara = document.createElement('p');
-  const commentPara = document.createElement('p');
+  const li = document.createElement('li');
+  const nameText = document.createElement('p');
+  const commentText = document.createElement('p');
 
-  namePara.textContent = nameField.value;
-  commentPara.textContent = commentField.value;
+  nameText.textContent = nameField.value;
+  commentText.textContent = commentField.value;
 
-  listItem.appendChild(namePara);
-  listItem.appendChild(commentPara);
-  list.appendChild(listItem);
+  li.appendChild(nameText);
+  li.appendChild(commentText);
+  list.appendChild(li);
 
-  nameField.value = '';
-  commentField.value = '';
+  // Clear form
+  nameField.value = "";
+  commentField.value = "";
 }

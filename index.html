@@ -2,166 +2,180 @@
   Name: Hrigdev Thapa
   File: index.html
   Date: 2025-12-08
-  Description: Main webpage structure containing the article, navigation, images, audio, and comments.
+  Description: Final accessible webpage structure with semantic HTML, labeled forms,
+  accessible images, audio fallback, table headers, and keyboard interaction.
 -->
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
+  <title>Accessibility assessment</title>
 
-    <title>Accessibility assessment</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="style.css">
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" 
+        rel="stylesheet">
 
-    <!-- fix for HTML5 in old IE -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
 
-  <body>
+<body>
 
-    <header class="header">
-      <h1>Welcome to our wildlife website</h1>
-    </header>
+  <!-- PAGE HEADER -->
+  <header class="header">
+    <h1>Welcome to our wildlife website</h1>
+  </header>
 
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Our team</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Blog</a></li>
-      </ul>
+  <!-- NAVIGATION BAR -->
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Our team</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
 
-      <form class="search">
-        <label for="search" class="sr-only">Search the site</label>
-        <input id="search" type="search" name="q" placeholder="Search query">
-        <input type="submit" value="Go!">
-      </form>
-    </nav>
+    <!-- Search form with screen-reader label -->
+    <form class="search">
+      <label for="search" class="sr-only">Search the site</label>
+      <input id="search" type="search" name="q" placeholder="Search query">
+      <input type="submit" value="Go!">
+    </form>
+  </nav>
 
-    <main>
-      <article>
+  <main>
 
-        <h2>The trouble with Bears</h2>
-        <p>By Evan Wild</p>
+    <article>
 
-        <p>
-        Tall, lumbering, angry, dangerous. The real live bears of this world are proud,
-        independent creatures, self-serving and always on the hunt for food.
-        </p>
+      <h2>The trouble with Bears</h2>
+      <p>By Evan Wild</p>
 
-        <h3>Types of bear</h3>
-        <p>Bears come in two varieties — large and medium. Cubs are the only exception.</p>
+      <p>
+        Tall, lumbering, angry, dangerous. Real bears are independent creatures always searching for food.
+      </p>
 
-        <table>
-          <caption>Comparison of wild and urban bear characteristics</caption>
-          <thead>
-            <tr>
-              <th scope="col">Bear Type</th>
-              <th scope="col">Coat</th>
-              <th scope="col">Adult size</th>
-              <th scope="col">Habitat</th>
-              <th scope="col">Lifespan</th>
-              <th scope="col">Diet</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Wild</td>
-              <td>Brown or black</td>
-              <td>1.4 to 2.8 meters</td>
-              <td>Woods and forests</td>
-              <td>25 to 28 years</td>
-              <td>Fish, meat, plants</td>
-            </tr>
-            <tr>
-              <td>Urban</td>
-              <td>North Face</td>
-              <td>18 to 22</td>
-              <td>Condos and coffee shops</td>
-              <td>20 to 32 years</td>
-              <td>Starbucks, sushi</td>
-            </tr>
-          </tbody>
-        </table>
+      <h3>Types of bear</h3>
+      <p>Bears come as large or medium. Cubs are the only small bears.</p>
 
-        <h3>Habitats and Eating habits</h3>
+      <!-- ACCESSIBLE TABLE -->
+      <table>
+        <caption>Comparison of wild and urban bear characteristics</caption>
+        <thead>
+          <tr>
+            <th scope="col">Bear Type</th>
+            <th scope="col">Coat</th>
+            <th scope="col">Adult size</th>
+            <th scope="col">Habitat</th>
+            <th scope="col">Lifespan</th>
+            <th scope="col">Diet</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Wild</td>
+            <td>Brown or black</td>
+            <td>1.4 to 2.8 meters</td>
+            <td>Woods and forests</td>
+            <td>25 to 28 years</td>
+            <td>Fish, meat, plants</td>
+          </tr>
+          <tr>
+            <td>Urban</td>
+            <td>North Face</td>
+            <td>18 to 22</td>
+            <td>Condos and coffee shops</td>
+            <td>20 to 32 years</td>
+            <td>Starbucks, sushi</td>
+          </tr>
+        </tbody>
+      </table>
 
-        <p>Wild bears hunt naturally and live in quiet areas.</p>
-        <img src="media/wild-bear.jpg" alt="Wild bear standing in a forest">
+      <h3>Habitats and Eating habits</h3>
+      <p>Wild bears hunt naturally and live in forests, caves, or mountains.</p>
 
-        <p>Urban bears scavenge dumpsters and city food places.</p>
-        <img src="media/urban-bear.jpg" alt="Urban bear in a city environment">
+      <img src="media/wild-bear.jpg" alt="Wild bear standing in a forest">
 
-        <h3>Mating rituals</h3>
-        <p>Bears prepare their homes to attract a lifelong mate.</p>
+      <p>Urban bears feed mostly on city waste and human food scraps.</p>
 
-        <audio controls>
-          <source src="media/bear.mp3" type="audio/mp3">
-          <source src="media/bear.ogg" type="audio/ogg">
-          <p>Your browser does not support audio. Transcript: Bear mating rituals explained.</p>
-        </audio>
+      <img src="media/urban-bear.jpg" alt="Urban bear searching near dumpsters">
 
-        <aside>
-          <h3>About the author</h3>
-          <p>Evan Wild is an amateur wildlife enthusiast from Doncaster.</p>
-        </aside>
+      <h3>Mating rituals</h3>
+      <p>Bears prepare clean and attractive spaces to impress a mate.</p>
 
-        <section class="comments">
+      <!-- ACCESSIBLE AUDIO WITH FALLBACK -->
+      <audio controls>
+        <source src="media/bear.mp3" type="audio/mp3">
+        <source src="media/bear.ogg" type="audio/ogg">
+        <p>Your browser does not support audio. Transcript: Bear mating rituals information.</p>
+      </audio>
 
-          <button class="show-hide" tabindex="0">Show comments</button>
-
-          <div class="comment-wrapper">
-
-            <h2>Add comment</h2>
-
-            <form class="comment-form">
-              <div class="flex-pair">
-                <label for="name">Your name:</label>
-                <input type="text" name="name" id="name" placeholder="Enter your name">
-              </div>
-              <div class="flex-pair">
-                <label for="comment">Your comment:</label>
-                <input type="text" name="comment" id="comment" placeholder="Enter your comment">
-              </div>
-              <div>
-                <input type="submit" value="Submit comment">
-              </div>
-            </form>
-
-            <h2>Comments</h2>
-
-            <ul class="comment-container">
-              <li>
-                <p>Bob Fossil</p>
-                <p>Oh I am so glad you taught me about the bears.</p>
-              </li>
-            </ul>
-
-          </div>
-        </section>
-
-      </article>
-
-      <aside class="secondary">
-        <h2>Related</h2>
-        <ul>
-          <li><a href="#">The trouble with Bees</a></li>
-          <li><a href="#">The trouble with Otters</a></li>
-          <li><a href="#">The trouble with Penguins</a></li>
-          <li><a href="#">The trouble with Octopi</a></li>
-          <li><a href="#">The trouble with Lemurs</a></li>
-        </ul>
+      <!-- ABOUT THE AUTHOR -->
+      <aside>
+        <h3>About the author</h3>
+        <p>Evan Wild is a wildlife enthusiast from Doncaster.</p>
       </aside>
 
-    </main>
+      <!-- COMMENTS SECTION -->
+      <section class="comments">
 
-    <footer>
-      <p>©Copyright 2050 by nobody. All rights reversed.</p>
-    </footer>
+        <!-- Keyboard-accessible toggle -->
+        <button class="show-hide" tabindex="0">Show comments</button>
 
-    <script src="main.js"></script>
+        <div class="comment-wrapper">
 
-  </body>
+          <h2>Add comment</h2>
+
+          <!-- FORM WITH LABELS -->
+          <form class="comment-form">
+            <div class="flex-pair">
+              <label for="name">Your name:</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name">
+            </div>
+
+            <div class="flex-pair">
+              <label for="comment">Your comment:</label>
+              <input type="text" id="comment" name="comment" placeholder="Enter your comment">
+            </div>
+
+            <div>
+              <input type="submit" value="Submit comment">
+            </div>
+          </form>
+
+          <h2>Comments</h2>
+
+          <ul class="comment-container">
+            <li>
+              <p>Bob Fossil</p>
+              <p>Thanks for teaching me about the big brown angry guys!</p>
+            </li>
+          </ul>
+
+        </div>
+      </section>
+
+    </article>
+
+    <aside class="secondary">
+      <h2>Related</h2>
+      <ul>
+        <li><a href="#">The trouble with Bees</a></li>
+        <li><a href="#">The trouble with Otters</a></li>
+        <li><a href="#">The trouble with Penguins</a></li>
+        <li><a href="#">The trouble with Octopi</a></li>
+        <li><a href="#">The trouble with Lemurs</a></li>
+      </ul>
+    </aside>
+
+  </main>
+
+  <footer>
+    <p>©Copyright 2050 by nobody. All rights reversed.</p>
+  </footer>
+
+  <script src="main.js"></script>
+ 
+
+</body>
 </html>
