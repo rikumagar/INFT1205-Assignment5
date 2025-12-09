@@ -1,3 +1,11 @@
+/*
+  Name: Hrigdev Thapa
+  File: main.js
+  Date: 2025-12-08
+  Description: JavaScript functionality for toggling comments and submitting new comments.
+
+*/
+
 // functionality for showing/hiding the comments section
 
 const showHideBtn = document.querySelector('.show-hide');
