@@ -5,6 +5,12 @@
   Description: Stylesheet controlling layout, colors, typography, and visuals.
 */
 
+/* 🔹 Screen-reader-only label */
+.sr-only {
+  position: absolute;
+  left: -9999px;
+}
+
 /* || General setup */
 
 html, body {
@@ -186,14 +192,13 @@ audio {
 
 .show-hide {
   cursor: pointer;
-}
-
-.comments font[size="6"] {
-  font-size: 2rem;
-}
-
-.comments font[size="6"]:nth-of-type(2) {
-  margin-bottom: 0;
+  background: #333;
+  color: white;
+  border: 0;
+  width: 150px;
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 32px;
 }
 
 .comment-form {
@@ -216,26 +221,13 @@ audio {
   flex: 6;
 }
 
-.show-hide {
-  text-align: center;
-  width: 150px;
-}
-
-.comment-form input, .comment-form label, .show-hide {
-  font-size: 1.6rem;
-  line-height: 32px;
-}
-
-.comment-form input[type="submit"], .show-hide {
-  background: #333;
-  border: 0;
-  color: white;
-}
-
 .comment-form input[type="submit"] {
   width: 30%;
   display: block;
   margin: 0 auto;
+  background: #333;
+  color: white;
+  border: 0;
 }
 
 .comment-container {
